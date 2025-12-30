@@ -10,7 +10,7 @@
 
 ## 📺 Lecture Video
 Watch the full Binary Trees lab lecture on YouTube:  
-👉 [Binary Trees Lecture](https://youtu.be/your_video_link)
+👉 [Binary Trees Lecture](https://youtu.be/ph8W8z3wDZI)
 
 ---
 
