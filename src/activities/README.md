@@ -254,8 +254,7 @@ graph TD
     A --> C["20"]
     B --> D["3"]
     C --> E["25"]
-
-Deepest Node: 25
+    E --> F["Deepest Node"]
 ```
 
 ---
