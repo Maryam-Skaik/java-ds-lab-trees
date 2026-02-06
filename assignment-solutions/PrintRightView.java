@@ -1,40 +1,31 @@
 package assignment_solutions;
 
-import java.util.LinkedList;
-
 /**
  * Problem:
- * Print all nodes visible from the right side of the tree.
+ * Print all nodes that are either the root or right children in the tree.
  *
  * Approach:
- * - Level-order traversal using a queue
- * - For each level, print the last node
+ * - Preorder traversal (root, left, right)
+ * - Print the node if it's the root or a right child
  *
  * Time Complexity: O(n)
- * Space Complexity: O(w) – maximum width of tree
+ * Space Complexity: O(h) – recursion stack, h = height of tree
  */
 public class PrintRightView {
 
-    public void printRightView(Node root) {
-        if (root == null) return;
-
-        LinkedList<Node> queue = new LinkedList<>();
-        queue.add(root);
-
-        while (!queue.isEmpty()) {
-            int size = queue.size();
-
-            for (int i = 0; i < size; i++) {
-                Node current = queue.remove();
-
-                if (i == size - 1) { // last node in this level
-                    System.out.print(current.data + " ");
-                }
-
-                if (current.left != null) queue.add(current.left);
-                if (current.right != null) queue.add(current.right);
-            }
-        }
+    public void printAllRightNodes(Node root) {
+        printRightNodesHelper(root, true); // root is considered a right node
         System.out.println();
+    }
+
+    private void printRightNodesHelper(Node node, boolean isRightChild) {
+        if (node == null) return;
+
+        if (isRightChild) {
+            System.out.print(node.data + " ");
+        }
+
+        printRightNodesHelper(node.left, false);
+        printRightNodesHelper(node.right, true);
     }
 }
