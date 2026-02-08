@@ -15,8 +15,8 @@ public class HeightBalancedCheck {
     public boolean isBalanced(Node root) {
         if (root == null) return true;
 
-        int leftHeight = new TreeHeight().height(root.left);
-        int rightHeight = new TreeHeight().height(root.right);
+        int leftHeight = new TreeHeight().isBalanced(root.left);
+        int rightHeight = new TreeHeight().isBalanced(root.right);
 
         if (leftHeight != rightHeight) return false;
 
